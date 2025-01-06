@@ -7,6 +7,7 @@ public class RokunoApplication {
     public static void main(String[] args) {
         CoreMap db = new CoreMap();
         db.set("kills", 100);
-        db.get("kills");
+        
+        System.out.println(db.existsValue(100));
     }
 }
