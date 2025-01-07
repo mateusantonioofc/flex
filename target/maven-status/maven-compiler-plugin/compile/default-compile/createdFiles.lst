@@ -1,5 +1,5 @@
 org/rokuno/core/CoreMap.class
 org/rokuno/exceptions/KeyNotFoundException.class
 org/rokuno/exceptions/NullKeyOrValueException.class
-org/rokun/utils/InternalMap.class
+org/rokuno/utils/InternalMap.class
 org/rokuno/RokunoApplication.class

@@ -50,6 +50,14 @@ public class InternalMap<Key, Value> {
     public void clear() {
         map.clear();
     }
+    
+    public void replace(Key key, Value value) {
+        if (!map.containsKey(key)) {
+            throw new KeyNotFoundException("Key not found");
+        }
+        map.put(key, value);
+        
+    }
 
     @Override
     public String toString() {

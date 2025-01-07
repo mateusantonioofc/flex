@@ -37,4 +37,8 @@ public class CoreMap<Key, Value> extends InternalMap<Key, Value>{
     public void drop() {
         db.clear();
     }
+    
+    public void update(Key key, Value value) {
+        db.replace(key, value);
+    }
 }
