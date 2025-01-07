@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.rokuno.exceptions.DatabaseAlreadyExistException;
+import org.rokuno.exceptions.DatabaseNotFoundException;
+import org.rokuno.exceptions.NullValueException;
 
 public class InternalList<Database, Value> {
     
@@ -18,76 +21,160 @@ public class InternalList<Database, Value> {
     }
     
     public void createList(Database database) { 
+        if (dbLists.containsKey(database)) {
+            throw new DatabaseAlreadyExistException("Database already exist!");
+        }
         dbLists.put(database, new ArrayList<>());
     }
     
     public void deleteList(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         dbLists.remove(database);
     } 
     
     public void put(Database database, Value value) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
         List<Object> list = getList(database);
         list.add(value);
     }
     
     public void delete(Database database, int index) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
+        if (index > list.size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        
         list.remove(index);
     }
     
     public Object getFirstElement(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
         return list.getFirst();
     }
     
     public Object getLastElement(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
         return list.getLast();
     }
     
     public void deleteFirstElement(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
         list.removeFirst();
     }
     
     public void deleteLastElement(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
         list.removeLast();
     }
     
-    public Object getByIndex(Database database, int index) {
+    public void addFirstElement(Database database, Value value) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
         List<Object> list = getList(database);
+        list.addFirst(value);
+    }
+    
+    public void addLastElement(Database database, Value value) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
+        List<Object> list = getList(database);
+        list.addLast(value);
+    }
+    
+    public Object getByIndex(Database database, int index) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        List<Object> list = getList(database);
+        if (index > list.size()) {
+            throw new IndexOutOfBoundsException();
+        }
         return list.get(index);
     }
     
     public void clear(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
         list.clear();
     }
     
     public int size(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
         List<Object> list = getList(database);
         return list.size();
     }
     
     public boolean contains(Database database, Value value) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
         List<Object> list = getList(database);
         return list.contains(value);
     }
     
     public int indexOf(Database database, Value value) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
         List<Object> list = getList(database);
         return list.indexOf(value);
     }
     
     public void update(Database database, int index, Value newValue) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseNotFoundException("Database not found!");
+        }
+        if(newValue == null) {
+            throw new NullValueException("Value does not null");
+        }
         List<Object> list = getList(database);
+        if (index > list.size()) {
+            throw new IndexOutOfBoundsException();
+        }
         list.set(index, newValue);
     }
-    
-    public void k(Database database) {
-        List<Object> list = getList(database);
-        list.
+
+    public void deleteAllLists() {
+        dbLists.clear();
     }
-    
 }
