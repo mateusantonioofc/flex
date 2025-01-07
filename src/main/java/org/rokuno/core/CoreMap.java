@@ -9,6 +9,11 @@ public class CoreMap<Key, Value> extends InternalMap<Key, Value>{
         this.db = new InternalMap<>();
     }
     
+    public CoreMap(Key key, Value value) {
+        this.db = new InternalMap<>();
+        set(key, value);
+    }
+    
     public void set(Key key, Value value) {
         db.put(key, value);
     }
