@@ -51,11 +51,11 @@ public class InternalMap<Key, Value> {
         map.clear();
     }
     
-    public void replace(Key key, Value value) {
+    public void replace(Key key, Value newValue) {
         if (!map.containsKey(key)) {
             throw new KeyNotFoundException("Key not found");
         }
-        map.put(key, value);
+        map.put(key, newValue);
         
     }
 
