@@ -5,17 +5,15 @@ import java.util.HashMap;
 import java.util.Objects;
 import org.rokuno.exceptions.KeyNotFoundException;
 import org.rokuno.exceptions.NullKeyOrValueException;
-import org.rokun.utils.impl.KeyValue;
 
-public class InternalMap<Key, Value> implements KeyValue<Key, Value> {
+public class InternalMap<Key, Value> {
     
     private final Map<Key, Value> map;
 
     public InternalMap() {
         this.map = new HashMap<>();
     }
-    
-    @Override
+
     public void put(Key key, Value value) {
         if (key == null || value == null) {
             throw new NullKeyOrValueException("Key or Value connot be null");
@@ -23,7 +21,6 @@ public class InternalMap<Key, Value> implements KeyValue<Key, Value> {
         map.put(key, value);
     }
     
-    @Override
     public Value get(Key key) {
         if (!map.containsKey(key)) {
             throw new KeyNotFoundException("Key not found! " + key);
@@ -31,7 +28,6 @@ public class InternalMap<Key, Value> implements KeyValue<Key, Value> {
         return map.get(key);
     }
     
-    @Override
     public void remove(Key key) {
         if (!map.containsKey(key)) {
             throw new KeyNotFoundException("Key not found! " + key);
@@ -39,22 +35,18 @@ public class InternalMap<Key, Value> implements KeyValue<Key, Value> {
         map.remove(key);
     }
     
-    @Override
     public boolean containsKey(Key key) {
         return map.containsKey(key);
     }
     
-    @Override
     public boolean containsValue(Value value) {
         return map.containsValue(value);
     }
 
-    @Override
     public int size() {
         return map.size();
     }
     
-    @Override
     public void clear() {
         map.clear();
     }
