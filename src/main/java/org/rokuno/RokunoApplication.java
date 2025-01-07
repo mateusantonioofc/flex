@@ -14,8 +14,8 @@ public class RokunoApplication {
         db.put("logs", 10);
         System.out.println(db.getByIndex("usr", 0));
         System.out.println(db.getByIndex("usr", 1));
-        db.update("logs", 0, "Hi");
-        System.out.println(db.getByIndex("logs", 0));
+        db.update("logs", 0, null);
+        db.delete("log", 0);
 
     }
 }
