@@ -15,7 +15,7 @@
 </p>
 
 > [!NOTE]
-> <sup id="1">[1]</sup> ⚡️| Banco de dados em memória focado em simplicidade e velocidade
+> <sup id="1">[1]</sup> ⚡️| Banco de dados em memória para testes
 
 ### 🔰 Instalação 
 
