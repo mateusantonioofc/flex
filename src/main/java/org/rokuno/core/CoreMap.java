@@ -1,6 +1,6 @@
 package org.rokuno.core;
 
-import org.rokun.utils.InternalMap;
+import org.rokuno.utils.InternalMap;
 
 public class CoreMap<Key, Value> extends InternalMap<Key, Value>{
     private final InternalMap<Key, Value> db;

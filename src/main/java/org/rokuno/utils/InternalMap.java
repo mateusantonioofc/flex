@@ -1,4 +1,4 @@
-package org.rokun.utils;
+package org.rokuno.utils;
 
 import java.util.Map;
 import java.util.HashMap;
