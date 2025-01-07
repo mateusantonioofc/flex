@@ -6,4 +6,7 @@ public class DatabaseNotFoundException extends RuntimeException{
         super(message);
     }
 
+    public DatabaseNotFoundException() {
+    }
+
 }
