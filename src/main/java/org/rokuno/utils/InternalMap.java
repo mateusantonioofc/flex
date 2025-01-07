@@ -56,7 +56,10 @@ public class InternalMap<Key, Value> {
             throw new KeyNotFoundException("Key not found");
         }
         map.put(key, newValue);
-        
+    }
+    
+    public boolean isEmpty() {
+        return map.isEmpty();
     }
 
     @Override
