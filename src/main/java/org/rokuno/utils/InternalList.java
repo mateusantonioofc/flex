@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import org.rokuno.exceptions.DatabaseAlreadyExistException;
 import org.rokuno.exceptions.DatabaseNotFoundException;
 import org.rokuno.exceptions.NullValueException;
@@ -177,4 +178,32 @@ public class InternalList<Database, Value> {
     public void deleteAllLists() {
         dbLists.clear();
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.dbLists);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final InternalList<?, ?> other = (InternalList<?, ?>) obj;
+        return Objects.equals(this.dbLists, other.dbLists);
+    }
+
+    @Override
+    public String toString() {
+        return "InternalList{" + "dbLists=" + dbLists + '}';
+    }
+    
 }
