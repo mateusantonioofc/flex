@@ -142,6 +142,10 @@ public class InternalList<Database, Value> {
         return list.size();
     }
     
+    public int sizeAll() {
+        return dbLists.size();
+    }
+    
     public boolean contains(Database database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
@@ -164,6 +168,10 @@ public class InternalList<Database, Value> {
             }
         }
         return false;
+    }
+    
+    public boolean hasDatabase(Database database) {
+        return dbLists.containsKey(database);
     }
     
     public Object searchValueInDatabase(Value value) {

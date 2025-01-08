@@ -1,5 +1,6 @@
 /home/mateu/dev/rokuno/src/main/java/org/rokuno/RokunoApplication.java
 /home/mateu/dev/rokuno/src/main/java/org/rokuno/core/CoreMap.java
+/home/mateu/dev/rokuno/src/main/java/org/rokuno/core/Database.java
 /home/mateu/dev/rokuno/src/main/java/org/rokuno/exceptions/DatabaseAlreadyExistException.java
 /home/mateu/dev/rokuno/src/main/java/org/rokuno/exceptions/DatabaseNotFoundException.java
 /home/mateu/dev/rokuno/src/main/java/org/rokuno/exceptions/KeyNotFoundException.java
