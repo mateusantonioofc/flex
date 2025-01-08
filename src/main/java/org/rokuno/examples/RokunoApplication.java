@@ -1,4 +1,4 @@
-package org.rokuno;
+package org.rokuno.examples;
 
 import org.rokuno.core.Database;
 
