@@ -64,7 +64,7 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         this.database.clear(database);
     }
     
-    public void clearAllDatabases(Database database) {
+    public void deleteAllDatabases(Database database) {
         this.database.deleteAllLists();
     }
     
