@@ -174,19 +174,6 @@ public class InternalList<Database, Value> {
         return dbLists.containsKey(database);
     }
     
-    public Object searchValueInDatabase(Value value) {
-        if(value == null) {
-            throw new NullValueException("Value does not null");
-        }
-        
-        for (List<Object> query : dbLists.values()) {
-            if (query.contains(value)) {
-                return new ArrayList<>(query);
-            }
-        }
-        return "Value not found";
-    }
-    
     public int indexOf(Database database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
