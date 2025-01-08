@@ -90,7 +90,12 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         return this.database.hasDatabase(database);
     }
     
+    @Override
     public int indexOf(Database database, Value value) {
         return this.database.indexOf(database, value);
+    }
+    
+    public void update(Database database, int index, Value newValue) {
+        this.database.update(database, index, newValue);
     }
 }
