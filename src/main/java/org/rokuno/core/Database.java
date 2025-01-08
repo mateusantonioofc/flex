@@ -1,5 +1,6 @@
 package org.rokuno.core;
 
+import java.util.List;
 import org.rokuno.utils.InternalList;
 
 public class Database<Database, Value> {
@@ -15,7 +16,10 @@ public class Database<Database, Value> {
         this.database.createList(databaseName);
     }
     
-    
+    public List selectAll(Database database) {
+        return this.database.getList(database);
+    }
+        
     public void createDatabase(Database databaseName) {
         this.database.createList(databaseName);
     }
