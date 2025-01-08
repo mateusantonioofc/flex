@@ -5,7 +5,7 @@
     height="100"
   />
 </div>
-<h1 align="center">Rokuno</h1>
+<h1 align="center">Rokuno DB</h1>
 
 <p align="center">
     <a href="https://github.com/mateusantonioofc/rokuno/pulse"><img src="https://img.shields.io/github/last-commit/mateusantonioofc/rokuno?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"></a>
