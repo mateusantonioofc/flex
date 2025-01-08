@@ -187,6 +187,14 @@ public class Database<DBName, Value> {
     }
     
     /**
+     * Verify if database empty
+     * @return boolean
+     */
+    public boolean isEmpty() {
+        return this.database.isEmpty();
+    }
+    
+    /**
      * Return index of element
      * @param database
      * @param value

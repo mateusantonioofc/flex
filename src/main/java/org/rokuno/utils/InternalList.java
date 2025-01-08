@@ -174,6 +174,10 @@ public class InternalList<DBName, Value> {
         return dbLists.containsKey(database);
     }
     
+    public boolean isEmpty() {
+        return dbLists.isEmpty();
+    }
+    
     public int indexOf(DBName database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
