@@ -2,7 +2,7 @@ package org.rokuno.core;
 
 import org.rokuno.utils.InternalMap;
 
-public class CoreMap<Key, Value> extends InternalMap<Key, Value>{
+public class CoreMap<Key, Value> {
     private final InternalMap<Key, Value> db;
 
     public CoreMap() {
@@ -11,7 +11,7 @@ public class CoreMap<Key, Value> extends InternalMap<Key, Value>{
     
     public CoreMap(Key key, Value value) {
         this.db = new InternalMap<>();
-        set(key, value);
+        db.put(key, value);
     }
     
     public void set(Key key, Value value) {

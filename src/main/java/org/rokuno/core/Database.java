@@ -2,7 +2,7 @@ package org.rokuno.core;
 
 import org.rokuno.utils.InternalList;
 
-public class Database<Database, Value> extends InternalList<Database, Value>{
+public class Database<Database, Value> {
     
     private final InternalList<Database, Value> database;
 
@@ -28,7 +28,6 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         this.database.put(database, value);
     }
     
-    @Override
     public void delete(Database database, int index) {
         this.database.delete(database, index);
     }
@@ -37,22 +36,18 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         return this.database.getByIndex(database, index);
     }
     
-    @Override
     public Object getFirstElement(Database database) {
         return this.database.getFirstElement(database);
     }
     
-    @Override
     public Object getLastElement(Database database) {
         return this.database.getLastElement(database);
     }
     
-    @Override
     public void deleteFirstElement(Database database) {
         this.database.deleteFirstElement(database);
     }
     
-    @Override
     public void deleteLastElement(Database database) {
         this.database.deleteLastElement(database);
     }
@@ -65,7 +60,6 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         this.database.addLastElement(database, value);
     }
     
-    @Override
     public void clear(Database database) {
         this.database.clear(database);
     }
@@ -74,7 +68,6 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         this.database.deleteAllLists();
     }
     
-    @Override
     public int size(Database database) {
         return this.database.size(database);
     }
@@ -91,12 +84,10 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         return this.database.hasValueInDatabase(value);
     }
     
-    @Override
     public boolean hasDatabase(Database database) {
         return this.database.hasDatabase(database);
     }
     
-    @Override
     public int indexOf(Database database, Value value) {
         return this.database.indexOf(database, value);
     }
