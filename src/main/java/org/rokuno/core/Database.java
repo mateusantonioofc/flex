@@ -89,4 +89,8 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
     public boolean hasDatabase(Database database) {
         return this.database.hasDatabase(database);
     }
+    
+    public int indexOf(Database database, Value value) {
+        return this.database.indexOf(database, value);
+    }
 }
