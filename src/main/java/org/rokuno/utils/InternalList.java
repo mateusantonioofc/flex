@@ -17,7 +17,10 @@ public class InternalList<Database, Value> {
        this.dbLists = new HashMap<>();
     }
     
-    private List getList(Database database) {
+    public List getList(Database database) {
+        if (!dbLists.containsKey(database)) {
+            throw new DatabaseAlreadyExistException("Database already exist!");
+        }
         return dbLists.get(database);
     }
     
@@ -148,6 +151,32 @@ public class InternalList<Database, Value> {
         }
         List<Object> list = getList(database);
         return list.contains(value);
+    }
+    
+    public boolean hasValueInDatabase(Value value) {
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
+        
+        for (List<Object> query : dbLists.values()) {
+            if (query.contains(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Object searchValueInDatabase(Value value) {
+        if(value == null) {
+            throw new NullValueException("Value does not null");
+        }
+        
+        for (List<Object> query : dbLists.values()) {
+            if (query.contains(value)) {
+                return new ArrayList<>(query);
+            }
+        }
+        return "Value not found";
     }
     
     public int indexOf(Database database, Value value) {
