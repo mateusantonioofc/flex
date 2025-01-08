@@ -10,6 +10,12 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
         this.database = new InternalList<>();
     }
     
+    public Database(Database databaseName) {
+        this.database = new InternalList<>();
+        this.database.createList(databaseName);
+    }
+    
+    
     public void createDatabase(Database databaseName) {
         this.database.createList(databaseName);
     }
@@ -97,5 +103,5 @@ public class Database<Database, Value> extends InternalList<Database, Value>{
     
     public void update(Database database, int index, Value newValue) {
         this.database.update(database, index, newValue);
-    }
+    }  
 }
