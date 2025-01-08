@@ -21,7 +21,7 @@ public class Database<DBName, Value> {
     }
     
     /**
-     * Return all databases
+     * Return all elements
      * @param database
      * @return List
      */
