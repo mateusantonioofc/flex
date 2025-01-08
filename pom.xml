@@ -8,6 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
-        <exec.mainClass>org.rokuno.RokunoApplication</exec.mainClass>
+        <exec.mainClass>org.rokuno.examples.RokunoApplication</exec.mainClass>
     </properties>
 </project>
