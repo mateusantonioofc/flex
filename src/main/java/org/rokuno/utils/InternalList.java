@@ -11,7 +11,7 @@ import org.rokuno.exceptions.NullValueException;
 
 public class InternalList<Database, Value> {
     
-    private final Map<Database, List<Object>> dbLists;
+    private final Map<Database, List<Value>> dbLists;
     
     public InternalList() {
        this.dbLists = new HashMap<>();
@@ -162,7 +162,7 @@ public class InternalList<Database, Value> {
             throw new NullValueException("Value does not null");
         }
         
-        for (List<Object> query : dbLists.values()) {
+        for (List<Value> query : dbLists.values()) {
             if (query.contains(value)) {
                 return true;
             }
