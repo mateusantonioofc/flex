@@ -9,36 +9,36 @@ import org.rokuno.exceptions.DatabaseAlreadyExistException;
 import org.rokuno.exceptions.DatabaseNotFoundException;
 import org.rokuno.exceptions.NullValueException;
 
-public class InternalList<Database, Value> {
+public class InternalList<DBName, Value> {
     
-    private final Map<Database, List<Value>> dbLists;
+    private final Map<DBName, List<Value>> dbLists;
     
     public InternalList() {
        this.dbLists = new HashMap<>();
     }
     
-    public List getList(Database database) {
+    public List getList(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseAlreadyExistException("Database already exist!");
         }
         return dbLists.get(database);
     }
     
-    public void createList(Database database) { 
+    public void createList(DBName database) { 
         if (dbLists.containsKey(database)) {
             throw new DatabaseAlreadyExistException("Database already exist!");
         }
         dbLists.put(database, new ArrayList<>());
     }
     
-    public void deleteList(Database database) {
+    public void deleteList(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
         dbLists.remove(database);
     } 
     
-    public void put(Database database, Value value) {
+    public void put(DBName database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -49,7 +49,7 @@ public class InternalList<Database, Value> {
         list.add(value);
     }
     
-    public void delete(Database database, int index) {
+    public void delete(DBName database, int index) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -61,7 +61,7 @@ public class InternalList<Database, Value> {
         list.remove(index);
     }
     
-    public Object getFirstElement(Database database) {
+    public Object getFirstElement(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -69,7 +69,7 @@ public class InternalList<Database, Value> {
         return list.getFirst();
     }
     
-    public Object getLastElement(Database database) {
+    public Object getLastElement(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -77,7 +77,7 @@ public class InternalList<Database, Value> {
         return list.getLast();
     }
     
-    public void deleteFirstElement(Database database) {
+    public void deleteFirstElement(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -85,7 +85,7 @@ public class InternalList<Database, Value> {
         list.removeFirst();
     }
     
-    public void deleteLastElement(Database database) {
+    public void deleteLastElement(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -93,7 +93,7 @@ public class InternalList<Database, Value> {
         list.removeLast();
     }
     
-    public void addFirstElement(Database database, Value value) {
+    public void addFirstElement(DBName database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -104,7 +104,7 @@ public class InternalList<Database, Value> {
         list.addFirst(value);
     }
     
-    public void addLastElement(Database database, Value value) {
+    public void addLastElement(DBName database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -115,7 +115,7 @@ public class InternalList<Database, Value> {
         list.addLast(value);
     }
     
-    public Object getByIndex(Database database, int index) {
+    public Object getByIndex(DBName database, int index) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -126,7 +126,7 @@ public class InternalList<Database, Value> {
         return list.get(index);
     }
     
-    public void clear(Database database) {
+    public void clear(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -134,7 +134,7 @@ public class InternalList<Database, Value> {
         list.clear();
     }
     
-    public int size(Database database) {
+    public int size(DBName database) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -146,7 +146,7 @@ public class InternalList<Database, Value> {
         return dbLists.size();
     }
     
-    public boolean contains(Database database, Value value) {
+    public boolean contains(DBName database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -170,11 +170,11 @@ public class InternalList<Database, Value> {
         return false;
     }
     
-    public boolean hasDatabase(Database database) {
+    public boolean hasDatabase(DBName database) {
         return dbLists.containsKey(database);
     }
     
-    public int indexOf(Database database, Value value) {
+    public int indexOf(DBName database, Value value) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
@@ -185,7 +185,7 @@ public class InternalList<Database, Value> {
         return list.indexOf(value);
     }
     
-    public void update(Database database, int index, Value newValue) {
+    public void update(DBName database, int index, Value newValue) {
         if (!dbLists.containsKey(database)) {
             throw new DatabaseNotFoundException("Database not found!");
         }
