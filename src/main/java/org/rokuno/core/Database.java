@@ -3,76 +3,76 @@ package org.rokuno.core;
 import java.util.List;
 import org.rokuno.utils.InternalList;
 
-public class Database<Database, Value> {
+public class Database<DBName, Value> {
     
-    private final InternalList<Database, Value> database;
+    private final InternalList<DBName, Value> database;
 
     public Database() {
         this.database = new InternalList<>();
     }
     
-    public Database(Database databaseName) {
+    public Database(DBName databaseName) {
         this.database = new InternalList<>();
         this.database.createList(databaseName);
     }
     
-    public List selectAll(Database database) {
+    public List selectAll(DBName database) {
         return this.database.getList(database);
     }
         
-    public void createDatabase(Database databaseName) {
+    public void createDatabase(DBName databaseName) {
         this.database.createList(databaseName);
     }
     
-    public void deleteDatabase(Database database) {
+    public void deleteDatabase(DBName database) {
         this.database.deleteList(database);
     }
     
-    public void insert(Database database, Value value) {
+    public void insert(DBName database, Value value) {
         this.database.put(database, value);
     }
     
-    public void delete(Database database, int index) {
+    public void delete(DBName database, int index) {
         this.database.delete(database, index);
     }
     
-    public Object get(Database database, int index) {
+    public Object get(DBName database, int index) {
         return this.database.getByIndex(database, index);
     }
     
-    public Object getFirstElement(Database database) {
+    public Object getFirstElement(DBName database) {
         return this.database.getFirstElement(database);
     }
     
-    public Object getLastElement(Database database) {
+    public Object getLastElement(DBName database) {
         return this.database.getLastElement(database);
     }
     
-    public void deleteFirstElement(Database database) {
+    public void deleteFirstElement(DBName database) {
         this.database.deleteFirstElement(database);
     }
     
-    public void deleteLastElement(Database database) {
+    public void deleteLastElement(DBName database) {
         this.database.deleteLastElement(database);
     }
     
-    public void insertInFirstPosition(Database database, Value value) {
+    public void insertInFirstPosition(DBName database, Value value) {
         this.database.addFirstElement(database, value);
     }
     
-    public void insertInLastPosition(Database database, Value value) {
+    public void insertInLastPosition(DBName database, Value value) {
         this.database.addLastElement(database, value);
     }
     
-    public void clear(Database database) {
+    public void clear(DBName database) {
         this.database.clear(database);
     }
     
-    public void deleteAllDatabases(Database database) {
+    public void deleteAllDatabases(DBName database) {
         this.database.deleteAllLists();
     }
     
-    public int size(Database database) {
+    public int size(DBName database) {
         return this.database.size(database);
     }
     
@@ -80,7 +80,7 @@ public class Database<Database, Value> {
         return database.sizeAll();
     }
     
-    public boolean containsElement(Database database, Value value) {
+    public boolean containsElement(DBName database, Value value) {
         return this.database.contains(database, value);
     }
     
@@ -88,15 +88,15 @@ public class Database<Database, Value> {
         return this.database.hasValueInDatabase(value);
     }
     
-    public boolean hasDatabase(Database database) {
+    public boolean hasDatabase(DBName database) {
         return this.database.hasDatabase(database);
     }
     
-    public int indexOf(Database database, Value value) {
+    public int indexOf(DBName database, Value value) {
         return this.database.indexOf(database, value);
     }
     
-    public void update(Database database, int index, Value newValue) {
+    public void update(DBName database, int index, Value newValue) {
         this.database.update(database, index, newValue);
     }  
 }
