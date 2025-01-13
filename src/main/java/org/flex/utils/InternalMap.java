@@ -1,10 +1,10 @@
-package org.rokuno.utils;
+package org.flex.utils;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Objects;
-import org.rokuno.exceptions.KeyNotFoundException;
-import org.rokuno.exceptions.NullKeyOrValueException;
+import org.flex.exceptions.KeyNotFoundException;
+import org.flex.exceptions.NullKeyOrValueException;
 
 public class InternalMap<Key, Value> {
     

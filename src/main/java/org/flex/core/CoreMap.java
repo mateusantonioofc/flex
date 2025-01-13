@@ -1,6 +1,6 @@
-package org.rokuno.core;
+package org.flex.core;
 
-import org.rokuno.utils.InternalMap;
+import org.flex.utils.InternalMap;
 
 public class CoreMap<Key, Value> {
     private final InternalMap<Key, Value> db;

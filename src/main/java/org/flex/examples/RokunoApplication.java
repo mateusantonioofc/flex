@@ -1,6 +1,6 @@
-package org.rokuno.examples;
+package org.flex.examples;
 
-import org.rokuno.core.Database;
+import org.flex.core.Database;
 
 public class RokunoApplication {
 

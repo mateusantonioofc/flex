@@ -1,7 +1,7 @@
-package org.rokuno.core;
+package org.flex.core;
 
 import java.util.List;
-import org.rokuno.utils.InternalList;
+import org.flex.utils.InternalList;
 
 public class Database<DBName, Value> {
     

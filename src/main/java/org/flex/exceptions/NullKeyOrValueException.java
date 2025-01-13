@@ -1,4 +1,4 @@
-package org.rokuno.exceptions;
+package org.flex.exceptions;
 
 public class NullKeyOrValueException extends RuntimeException {
     
