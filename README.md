@@ -1,6 +1,6 @@
 <div align="center" id="flex logo">
   <img
-    src="https://github.com/mateusantonioofc/flex/blob/main/img/logo_rokuno.png"    width="110"
+    src="https://github.com/mateusantonioofc/flex/blob/main/img/logo_flex.png"    width="110"
     ,
     height="100"
   />
